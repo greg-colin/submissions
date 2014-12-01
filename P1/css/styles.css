@@ -93,6 +93,15 @@ img {
     margin-right: 0px;
 }
 
+.app-image {
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.project-image {
+    margin-bottom: 0px;
+}
+
 .banner-image {
     width: 100%;
     max-width: 100%;
