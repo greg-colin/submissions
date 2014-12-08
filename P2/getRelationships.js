@@ -1,14 +1,23 @@
-// getRelationships.js
-//
-// This code implements the first of the P2 Javascript challenges
-// Author: Gregory Colin
-// Change history:
+/**
+ * @file getRelationships.js
+ * @fileOverView This code implements the first of the P2 Javascript challenges
+ * @author Gregory Colin
+*/
 // 19NOV14 - Written / submitted
 // 19NOV14 - Remove extraneous variables used in testing
-//
-// getRelationship(x, y)
-// Return the numerical relationship between the two parameters, or a syntactically correct
-// error message if one or both parameters is inapplicable to the calculation.
+// 08DEC14 - Rewrite comments
+
+/**
+ * @function
+ * @name getRelationship
+ * @param {int} x
+ * @param {int} y
+ * @returns {string} (e.g.: "<")
+ * @description Given two integers, return a string containing an appropriate relationship
+                operator, or, alternatively, a syntactically correct error message if one or
+                both parameters is inapplicable to the calculation.
+ * @example getRelationship(1,2);
+*/
 function getRelationship(x, y) {
     var numInvalid = 0;
     var rel;

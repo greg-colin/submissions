@@ -1,15 +1,22 @@
-// pageInsights.js
-//
-// This code implements the third of the P2 Javascript challenges
-// Author: Gregory Colin
+/**
+ * @file pageInsights.js:
+ * @fileOverView This code implements the third of the P2 Javascript challenges
+ * @author Gregory Colin
+*/
 // Change history:
 // 19NOV14 - Written / submitted
 // 19NOV14 - Rename variables in totalBytes()
-//
-// ruleList(result)
-// Given a parameter object containing JSON as returned from Google's PageSpeedInsights,
-// iterate over the subset defined by "formattedResults.ruleResults" and return an array
-// of the rule names that were applied in Google's test.
+// 08DEC14 - Rewrite comments
+
+/**
+ * @function
+ * @name ruleList
+ * @param {Object} results
+ * @returns {string[]}
+ * @description Given a parameter object containing JSON as returned from Google's PageSpeedInsights,
+ *              iterate over the subset defined by "formattedResults.ruleResults" and return an array
+ *              of the rule names that were applied in Google's test.
+*/
 function ruleList(results) {
     var ruleNames = [];
     
@@ -19,10 +26,15 @@ function ruleList(results) {
     return ruleNames;
 }
 
-// totalBytes(results)
-// Given a parameter object containing JSON as returned from Google's PageSpeedInsights,
-// iterate over the subset defined by "pageStats" and compute the total bytes involved
-// in Google's test.
+/**
+ * @function
+ * @name totalBytes
+ * @param {Object} results
+ * @returns {int}
+ * @description Given a parameter object containing JSON as returned from Google's PageSpeedInsights,
+                iterate over the subset defined by "pageStats" and compute the total bytes involved
+                in Google's test.
+*/
 function totalBytes(results) {
     var ttlBytes = 0;
     for (var i in results.pageStats) {
@@ -33,9 +45,11 @@ function totalBytes(results) {
     return ttlBytes;
 }
 
-// Below, you'll find a sample PS Insights JSON
-// and two console.log statements to help you test your code!
-
+/**
+ * @constant
+ * @name psinsights
+ * @description An example result from Google's PageSpeedInsights expressed as JSON
+*/
 psinsights = {
  "kind": "pagespeedonline#result",
  "id": "/speed/pagespeed",
