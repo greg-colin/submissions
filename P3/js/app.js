@@ -2,6 +2,7 @@
  * @file app.js
  * @fileoverview Defines classes and functions called during gameplay.
  * @author Gregory Colin
+ * @version 1.0,5 - 31DEC2014 Correct naming convention for constants.<br>
  * @version 1.0.4 - 30DEC2014 Cleanup for completion.<br>
  * @version 1.0.3 - 17DEC2014 Add score. Add changeable character.<br>
  * @version 1.0.2 - 11DEC2014 Rewrite comments as JSDoc-formatted <br>
@@ -10,7 +11,7 @@
  */
 
 /**
- * @class GameRectangle Used for character positioning within game tiles.
+ * @class Used for character positioning within game tiles.
  * @description Character bounding boxes within game tiles. Everything within the game
  * is set within a transparent tile which is larger than the object. These rectangles
  * are used to hold the bounding boxes for the actual game object.
@@ -43,7 +44,7 @@ var GameRectangle = function(x, y, w, h) {
 }
 
 /**
- * @class GameCharacter A superclass for every object in the game
+ * @class A superclass for every object in the game
  * @description GameCharacter is a superclass for every object in the game,
  * encapsulating variables and behaviors common to all.
  * @param {string} strname - The characters can have names. Can be used
@@ -166,7 +167,7 @@ GameCharacter.prototype.render = function() {
 }
 
 /**
- * @class Prize The player character within the game.
+ * @class The player character within the game.
  * @extends GameCharacter
  * @see GameCharacter
  * @description Prizes that can be collected by the player to gain points.
@@ -183,18 +184,18 @@ GameCharacter.prototype.render = function() {
  * @borrows GameCharacter#hasCollidedWith as this.hasCollidedWith
  */
 var Prize = function(strname, row, col, num) {
-    GameCharacter.call(this, strname, col * boxWidth, row * boxHeight - 10);
+    GameCharacter.call(this, strname, col * BOX_WIDTH, row * BOX_HEIGHT - 10);
     this.setCharacterBounds(this.x + 0,
         this.y + 60,
-        boxWidth,
-        boxHeight);
+        BOX_WIDTH,
+        BOX_HEIGHT);
     /**
      * @member {int}
      * @description Contains the point value of this prize.
      */
     this.value = (num + 1) * 100;
     this.isVisible = true;
-    this.setSprite(prizeUrls[num]);
+    this.setSprite(PRIZE_URLS[num]);
 }
 Prize.prototype = Object.create(GameCharacter.prototype);
 Prize.prototype.constructor = Prize;
@@ -212,7 +213,7 @@ Prize.prototype.render = function() {
 }
 
 /**
- * @class Enemy Enemy characters within the game.
+ * @class Enemy characters within the game.
  * @extends GameCharacter
  * @see GameCharacter
  * @description Enemy characters within the game. All enemies are the same in this game.
@@ -231,17 +232,17 @@ Prize.prototype.render = function() {
  * @borrows GameCharacter#hasCollidedWith as this.hasCollidedWith
  */
 var Enemy = function(strname) {
-    GameCharacter.call(this, strname, randRange(0,4) * boxWidth, randRange(1, 3) * boxHeight - enemyDrawYOffset);
+    GameCharacter.call(this, strname, randRange(0,4) * BOX_WIDTH, randRange(1, 3) * BOX_HEIGHT - ENEMY_DRAW_Y_OFFSET);
     /** 
      * @member {int}
      * @description The speed at which the current enemy moves expressed as multiples of
      * the Engine's loop interval.
      */
-    this.speed = randRange(enemySpeedLow, enemySpeedHigh);
-    this.setCharacterBounds(this.x + enemyBoundLeftOffset,
-        this.y + enemyBoundTopOffset,
-        enemyBoundWidth,
-        enemyBoundHeight);
+    this.speed = randRange(ENEMY_SPEED_LOW, ENEMY_SPEED_HIGH);
+    this.setCharacterBounds(this.x + ENEMY_BOUND_LEFT_OFFSET,
+        this.y + ENEMY_BOUND_TOP_OFFSET,
+        ENEMY_BOUND_WIDTH,
+        ENEMY_BOUND_HEIGHT);
     this.setSprite("images/enemy-bug.png");
 }
 
@@ -271,11 +272,11 @@ Enemy.prototype.update = function(dt) {
         if (this.isOffscreenX(this.x)) {
             this.x = 0;
             this.row = randRange(1, 3);
-            this.y = this.row * boxHeight - enemyDrawYOffset;
-            this.speed = randRange(enemySpeedLow, enemySpeedHigh);
+            this.y = this.row * BOX_HEIGHT - ENEMY_DRAW_Y_OFFSET;
+            this.speed = randRange(ENEMY_SPEED_LOW, ENEMY_SPEED_HIGH);
         }
-        this.boundingRect.x = this.x + enemyBoundLeftOffset;
-        this.boundingRect.y = this.y + enemyBoundTopOffset;
+        this.boundingRect.x = this.x + ENEMY_BOUND_LEFT_OFFSET;
+        this.boundingRect.y = this.y + ENEMY_BOUND_TOP_OFFSET;
     }
 }
 
@@ -287,7 +288,7 @@ Enemy.prototype.update = function(dt) {
  * @returns {bool} True if the X position of the enemy tile places is off the canvas. Otherwise false.
  */
 Enemy.prototype.isOffscreenX = function(x) {
-    if ((x < 0) || (x > boxWidth * (boardWidthBoxes -1))) {
+    if ((x < 0) || (x > BOX_WIDTH * (BOARD_WIDTH_BOXES -1))) {
         return true;
     }
     return false;
@@ -325,7 +326,7 @@ Enemy.prototype.isBumpingAnyOther = function() {
 }
 
 /**
- * @class Player The player character within the game.
+ * @class The player character within the game.
  * @extends GameCharacter
  * @see GameCharacter
  * @description The player character within the game. The player is always shown in the same
@@ -343,12 +344,12 @@ Enemy.prototype.isBumpingAnyOther = function() {
  * @borrows GameCharacter#hasCollidedWith as this.hasCollidedWith
  */
 var Player = function(strname) {
-    GameCharacter.call(this, strname, boxWidth * 2, boxHeight * 5 - 10);
-    this.setCharacterBounds(this.x + playerBoundLeftOffset,
-        this.y + playerBoundTopOffset,
-        playerBoundWidth,
-        playerBoundHeight);
-    this.setSprite(characterUrls[characterNumber]);
+    GameCharacter.call(this, strname, BOX_WIDTH * 2, BOX_HEIGHT * 5 - 10);
+    this.setCharacterBounds(this.x + PLAYER_BOUND_LEFT_OFFSET,
+        this.y + PLAYER_BOUND_TOP_OFFSET,
+        PLAYER_BOUND_WIDTH,
+        PLAYER_BOUND_HEIGHT);
+    this.setSprite(CHARACTER_URLS[characterNumber]);
 }
 
 Player.prototype = Object.create(GameCharacter.prototype);
@@ -374,8 +375,8 @@ Player.prototype.constructor = Player;
  * @param {float} dt - Movement multiplier for speed equalization
  */
 Player.prototype.update = function(dt) {
-    this.boundingRect.x = this.x + playerBoundLeftOffset;
-    this.boundingRect.y = this.y + playerBoundTopOffset;
+    this.boundingRect.x = this.x + PLAYER_BOUND_LEFT_OFFSET;
+    this.boundingRect.y = this.y + PLAYER_BOUND_TOP_OFFSET;
     if (this.y <= 0 && !frozen) {
         if (this.hasAllPrizes()) {
             frozen = true;
@@ -405,7 +406,7 @@ Player.prototype.hasAllPrizes = function() {
  */
 Player.prototype.handleInput = function(inkey) {
     console.log("valid keypress");
-    var snd = Resources.getaudio(audioUrls[1]);
+    var snd = Resources.getaudio(AUDIO_URLS[1]);
     snd.mediaGroup = "game";
     if (!frozen) {
         switch (inkey) {
@@ -418,7 +419,7 @@ Player.prototype.handleInput = function(inkey) {
                 break;
             case 'up':
                 if (this.y > 0) {
-                    this.y = this.y - boxHeight;
+                    this.y = this.y - BOX_HEIGHT;
                     snd.currentTime = 0;
                     snd.play();
                 }
@@ -432,7 +433,7 @@ Player.prototype.handleInput = function(inkey) {
                 break;
             case 'down':
                 if (this.y < 404) {
-                    this.y = this.y + boxHeight;
+                    this.y = this.y + BOX_HEIGHT;
                     snd.currentTime = 0;
                     snd.play();
                 }
@@ -463,15 +464,15 @@ Player.prototype.handleInput = function(inkey) {
  * @method switchCharacter
  * @description Switch to the next possible character bitmap, selected from
  * an array of URLs.
- * @see characterUrls
+ * @see CHARACTER_URLS
  * @see characterNumber
  */
 Player.prototype.switchCharacter = function() {
     characterNumber++;
-    if (characterNumber > maxCharNum) {
+    if (characterNumber > MAX_CHAR_NUM) {
         characterNumber = 0;
     }
-    this.setSprite(characterUrls[characterNumber]);
+    this.setSprite(CHARACTER_URLS[characterNumber]);
 }
 
 /**
@@ -613,7 +614,7 @@ function collisionDetectReact() {
  * @description Play the sound for transition between levels.
  */
 function playNewLevelSound() {
-    var snd = Resources.getaudio(audioUrls[4]);
+    var snd = Resources.getaudio(AUDIO_URLS[4]);
     snd.mediaGroup = "game";
     snd.currentTime = 0;
     snd.play();
@@ -624,7 +625,7 @@ function playNewLevelSound() {
  * @description Play the prize collection sound.
  */
 function playGetPrizeSound() {
-    var snd = Resources.getaudio(audioUrls[3]);
+    var snd = Resources.getaudio(AUDIO_URLS[3]);
     snd.mediaGroup = "game";
     snd.currentTime = 0;
     snd.play();
@@ -635,7 +636,7 @@ function playGetPrizeSound() {
  * @description Play player/enemy collision sound.
  */
 function playCollisionSound() {
-    var snd = Resources.getaudio(audioUrls[2]);
+    var snd = Resources.getaudio(AUDIO_URLS[2]);
     snd.mediaGroup = "game";
     snd.currentTime = 0;
     snd.play();
@@ -650,7 +651,7 @@ function playCollisionSound() {
  */
 function pauseBackgroundAudio() {
     console.log("BG Audio paused");
-    var backgroundAudio = Resources.getaudio(audioUrls[0]);
+    var backgroundAudio = Resources.getaudio(AUDIO_URLS[0]);
     backgroundAudio.pause();
 }
 
@@ -662,7 +663,7 @@ function pauseBackgroundAudio() {
  * @see pauseBackgroundAudio
  */
 function startBackgroundAudio() {
-    var backgroundAudio = Resources.getaudio(audioUrls[0]);
+    var backgroundAudio = Resources.getaudio(AUDIO_URLS[0]);
     backgroundAudio.mediaGroup = "game";
     backgroundAudio.loop = true;
     backgroundAudio.play();
@@ -700,206 +701,206 @@ function userReset() {
 }
 
 /**
- * @constant {int} tileHeight
+ * @constant {int} TILE_HEIGHT
  * @description The high of a full tile on the game canvas.
  */
-var tileHeight = 171;
+var TILE_HEIGHT = 171;
 
 /**
- * @constant {int} tileWidth
+ * @constant {int} TILE_WIDTH
  * @description The high of a full tile on the game canvas.
  */
-var tileWidth = 101;
+var TILE_WIDTH = 101;
 
 /**
- * @constant {int} boxWidth
- * @description The width of a game row - equals tileWidth.
- * @see tileWidth
+ * @constant {int} BOX_WIDTH
+ * @description The width of a game row - equals TILE_WIDTH.
+ * @see TILE_WIDTH
  */
-var boxWidth = tileWidth;
+var BOX_WIDTH = TILE_WIDTH;
 
 /**
- * @constant {int} boxHeight
+ * @constant {int} BOX_HEIGHT
  * @description The height of a game row, as distinct from a tile height.
  */
-var boxHeight = 83;
+var BOX_HEIGHT = 83;
 
 /**
- * @constant {int} enemyWidth
- * @description The width of an enemy tile. For this game, same as tileWidth
- * @see tileWidth
+ * @constant {int} ENEMY_WIDTH
+ * @description The width of an enemy tile. For this game, same as TILE_WIDTH
+ * @see TILE_WIDTH
  */
-var enemyWidth = tileWidth;
+var ENEMY_WIDTH = TILE_WIDTH;
 
 /**
- * @constant {int} enemyHeight
- * @description The height of an enemy tile. For this game, same as tileHeight
- * @see tileHeight
+ * @constant {int} ENEMY_HEIGHT
+ * @description The height of an enemy tile. For this game, same as TILE_HEIGHT
+ * @see TILE_HEIGHT
  */
-var enemyHeight = tileHeight;
+var ENEMY_HEIGHT = TILE_HEIGHT;
 
 /**
- * @constant {int} enemyDrawYOffset
+ * @constant {int} ENEMY_DRAW_Y_OFFSET
  * @description Used to correctly position the enemy tile to improve appearance.
  */
-var enemyDrawYOffset = 18;
+var ENEMY_DRAW_Y_OFFSET = 18;
 
 /**
- * @constant {int} playerWidth
- * @description The width of an player tile. For this game, same as tileWidth
- * @see tileWidth
+ * @constant {int} PLAYER_WIDTH
+ * @description The width of an player tile. For this game, same as TILE_WIDTH
+ * @see TILE_WIDTH
  */
-var playerWidth = tileWidth;
+var PLAYER_WIDTH = TILE_WIDTH;
 
 /**
- * @constant {int} playerHeight
- * @description The width of an player tile. For this game, same as tileWidth
- * @see tileHeight
+ * @constant {int} PLAYER_HEIGHT
+ * @description The width of an player tile. For this game, same as TILE_WIDTH
+ * @see TILE_HEIGHT
  */
-var playerHeight = tileHeight;
+var PLAYER_HEIGHT = TILE_HEIGHT;
 
 /**
- * @constant {int} boardWidthBoxes
- * @description The width of the board, as a multiple of tileWidth
- * @see tileWidth
+ * @constant {int} BOARD_WIDTH_BOXES
+ * @description The width of the board, as a multiple of TILE_WIDTH
+ * @see TILE_WIDTH
  */
-var boardWidthBoxes = 5;
+var BOARD_WIDTH_BOXES = 5;
 
 /**
- * @constant {int} enemySpeedLow
+ * @constant {int} ENEMY_SPEED_LOW
  * @description The low end of the random range within which enemies move
  * @see Enemy#speed
  */
-var enemySpeedLow = 150;
+var ENEMY_SPEED_LOW = 150;
 
 /**
- * @constant {int} enemySpeedHigh
+ * @constant {int} ENEMY_SPEED_HIGH
  * @description The high end of the random range within which enemies move
  * @see Enemy#speed
  */
-var enemySpeedHigh = 200;
+var ENEMY_SPEED_HIGH = 200;
 
 /**
- * @constant {int} enemyBoundTopOffset
+ * @constant {int} ENEMY_BOUND_TOP_OFFSET
  * @type {int}
  * @description The number of pixels between the top of the tile and the top of
  * the enemy's bounding rectangle
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var enemyBoundTopOffset = 77;
+var ENEMY_BOUND_TOP_OFFSET = 77;
 
 /**
- * @constant {int} enemyBoundBottomOffset
+ * @constant {int} ENEMY_BOUND_BOTTOM_OFFSET
  * @type {int}
  * @description The number of pixels between the bottom of the tile and the bottom of
  * the enemy's bounding rectangle
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var enemyBoundBottomOffset = 29;
+var ENEMY_BOUND_BOTTOM_OFFSET = 29;
 
 /**
- * @constant {int} enemyBoundLeftOffset
+ * @constant {int} ENEMY_BOUND_LEFT_OFFSET
  * @type {int}
  * @description The number of pixels between the left side of the tile and the left side of
  * the enemy's bounding rectangle
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var enemyBoundLeftOffset = 1;
+var ENEMY_BOUND_LEFT_OFFSET = 1;
 
 /**
- * @constant {int} enemyBoundRightOffset
+ * @constant {int} ENEMY_BOUND_RIGHT_OFFSET
  * @type {int}
  * @description The number of pixels between the right side of the tile and the right side of
  * the enemy's bounding rectangle
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var enemyBoundRightOffset = 1;
+var ENEMY_BOUND_RIGHT_OFFSET = 1;
 
 /**
- * @constant {int} enemyBoundWidth
+ * @constant {int} ENEMY_BOUND_WIDTH
  * @type {int}
  * @description The width of the enemy's bounding rectangle in case its needed for something.
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var enemyBoundWidth = enemyWidth - enemyBoundLeftOffset - enemyBoundRightOffset;
+var ENEMY_BOUND_WIDTH = ENEMY_WIDTH - ENEMY_BOUND_LEFT_OFFSET - ENEMY_BOUND_RIGHT_OFFSET;
 
 /**
- * @constant {int} enemyBoundHeight
+ * @constant {int} ENEMY_BOUND_HEIGHT
  * @type {int}
  * @description The height of the enemy's bounding rectangle in case its needed for something.
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var enemyBoundHeight = enemyHeight - enemyBoundTopOffset - enemyBoundBottomOffset;
+var ENEMY_BOUND_HEIGHT = ENEMY_HEIGHT - ENEMY_BOUND_TOP_OFFSET - ENEMY_BOUND_BOTTOM_OFFSET;
 
 /**
- * @constant {int} playerBoundTopOffset
+ * @constant {int} PLAYER_BOUND_TOP_OFFSET
  * @type {int}
  * @description The number of pixels between the top of the tile and the top of
  * the player's bounding rectangle
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var playerBoundTopOffset = 65;
+var PLAYER_BOUND_TOP_OFFSET = 65;
 
 /**
- * @constant {int} playerBoundBottomOffset
+ * @constant {int} PLAYER_BOUND_BOTTOM_OFFSET
  * @type {int}
  * @description The number of pixels between the bottom of the tile and the bottom of
  * the player's bounding rectangle
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var playerBoundBottomOffset = 31;
+var PLAYER_BOUND_BOTTOM_OFFSET = 31;
 
 /**
- * @constant {int} playerBoundLeftOffset
+ * @constant {int} PLAYER_BOUND_LEFT_OFFSET
  * @type {int}
  * @description The number of pixels between the left side of the tile and the left side of
  * the player's bounding rectangle
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var playerBoundLeftOffset = 17;
+var PLAYER_BOUND_LEFT_OFFSET = 17;
 
 /**
- * @constant {int} playerBoundTopOffset
+ * @constant {int} PLAYER_BOUND_TOP_OFFSET
  * @type {int}
  * @description The number of pixels between the right side of the tile and the right side of
  * the player's bounding rectangle
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var playerBoundRightOffset = 16;
+var PLAYER_BOUND_RIGHT_OFFSET = 16;
 
 /**
- * @constant {int} playerBoundHeight
+ * @constant {int} PLAYER_BOUND_HEIGHT
  * @type {int}
  * @description The width of the player's bounding rectangle in case its needed for something.
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var playerBoundHeight = playerHeight - playerBoundTopOffset - playerBoundBottomOffset;
+var PLAYER_BOUND_HEIGHT = PLAYER_HEIGHT - PLAYER_BOUND_TOP_OFFSET - PLAYER_BOUND_BOTTOM_OFFSET;
 
 /**
- * @constant {int} playerBoundWidth
+ * @constant {int} PLAYER_BOUND_WIDTH
  * @type {int}
  * @description The width of the player's bounding rectangle in case its needed for something.
  * @see GameRectangle
  * @see GameCharacter#boundingRect
  */
-var playerBoundWidth = playerWidth - playerBoundLeftOffset - playerBoundRightOffset;
+var PLAYER_BOUND_WIDTH = PLAYER_WIDTH - PLAYER_BOUND_LEFT_OFFSET - PLAYER_BOUND_RIGHT_OFFSET;
 
 /**
- * @constant {int} prizeDrawYOffset
+ * @constant {int} PRIZE_DRAW_Y_OFFSET
  * @description Used to correctly position the enemy tile to improve appearance.
  */
-var prizeDrawYOffset = 18;
+var PRIZE_DRAW_Y_OFFSET = 18;
 
 /**
  * @var {bool} showBoundingRects
@@ -994,31 +995,39 @@ var status = statusEnum.playing;
 var characterNumber = 0;
 
 /**
- * @constant maxCharNum
+ * @constant MAX_CHAR_NUM
  * @type {int}
  * @description The highest poasible index in the array of character URLs.
  */
-var maxCharNum = 3;
+var MAX_CHAR_NUM = 3;
 
 /**
- * @constant {string[]} characterUrls
- * @description An array of relative URLs used to change the current character
+ * @constant {string[]} CHARACTER_URLS
+ * @description An array of relative URLs used to change the current character.
  * during gameplay.
  */
-var characterUrls = [
+var CHARACTER_URLS = [
     "images/char-boy.png",
     "images/char-cat-girl.png",
     "images/char-horn-girl.png",
     "images/char-pink-girl.png",
 ];
 
-var prizeUrls = [
+/**
+ * @constant {string[]} PRIZE_URLS
+ * @description An array of relative URLs used to set the prize bitmaps.
+ */
+var PRIZE_URLS = [
     "images/Gem-Blue.png",
     "images/Gem-Green.png",
     "images/Gem-Orange.png"
 ];
 
-var audioUrls = [
+/**
+ * @constant {string[]} AUDIO_URLS
+ * @description An array of relative URLs used to get sounds for gameplay.
+ */
+var AUDIO_URLS = [
     "audio/background.mp3",
     "audio/jump.mp3",
     "audio/collision.mp3",
