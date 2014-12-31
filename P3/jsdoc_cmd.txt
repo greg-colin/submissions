@@ -1,0 +1,1 @@
+jsrun.sh -t=c:\jsdoc-toolkit\\templates\\jsdoc -a --private app.js engine.js resources.js

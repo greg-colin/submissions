@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Trivial Frogger-like Game</title>
+  <link rel="stylesheet" href="http://www.netlanta.com/Portfolio/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://www.netlanta.com/Portfolio/css/normalize.css">
+  <link href="http://fonts.googleapis.com/css?family=Lato:400,300,100" rel="stylesheet">
+  <link rel="stylesheet" href="http://www.netlanta.com/Portfolio/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="row no-bottom-margin">
+      <div class="col-md-6">
+        <a href="http://www.netlanta.com/Portfolio"><img class="app-image" src="http://www.netlanta.com/Portfolio/images/punch_card_do_1.png" alt="Website logo"></a>
+      </div>
+      <div class="col-md-6">
+        <h1 class="text-right">GREGORY COLIN</h1>
+        <h4 class="header-title text-right">IPTV DEVELOPER / FRONT-END SPECIALIST</h4>
+      </div>
+    </header>
+    <div class="col-md-12 seperator"></div>
+    <div class="row">
+      <div id="instrux" class="col-md-4">
+        <h2>Trivial "Frogger-like" Game</h2>
+        Try to reach the top of the game board, having collected all of
+        the jewels shown in any given level. There are three levels, ranging from
+        incredibly simple to a modest level of difficulty. Written to explore video
+        game concepts in an object-oriented fashion.
+        <p>
+          <h3>Instructions</h3>
+          The objective is to move to the top of the screen in an upward direction.
+          You must collect all of the jewels (if any) on each level to be allowed
+          to the next level. Jewels may be atop one another for multiple, simultaneous prizes.
+          The player cannot move off offscreen to left, right, or downward.
+          <h4>Keys Supported</h4>
+          Cursor Up, Down, Left, Right - Move player<br>
+          a - <b>a</b>udio toggle background music<br>
+          b - <b>b</b>ounding rectangles show (freezes play)<br>
+          c - <b>c</b>hange character<br>
+          <h4>Note:</h4>
+          The game sounds best in Chrome - something about the handling of the HTML5 audio
+          element, I think. IE users are out of luck entirely.
+          <h4>Documentation</h4>
+          <b>Doumentation for the entire project is located <a href="doc/index.html">here</a>.</b>
+      </div>
+      <div id="maincontent" class="col-md-8 text-center">
+        <script src="js/resources.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/engine.js"></script>
+      </div>
+      <div id="dummy" class="col-md-4">
+      </div>
+      <div id="controls" class="col-md8 text-center">
+      	<button id="reset" type="button" onclick="userReset();">Reset Game</button>
+      	<button id="togglebgaudio" type="button" onclick="toggleAudio()">Toggle BG Audio</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
