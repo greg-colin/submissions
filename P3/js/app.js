@@ -989,7 +989,7 @@ statusEnum = {
 var status = statusEnum.playing;
 
 /**
- * @constant {int} characterNumber
+ * @var {int} characterNumber
  * @description The index of the current character's bitmap.
  */
 var characterNumber = 0;

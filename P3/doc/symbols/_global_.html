@@ -270,6 +270,16 @@ ul.inheritsList
 						</tr>
 					
 						<tr>
+							<td class="attributes">&lt;constant&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								<b><a href="../symbols/_global_.html#AUDIO_URLS">AUDIO_URLS</a></b>
+								</div>
+								<div class="description">An array of relative URLs used to get sounds for gameplay.</div>
+							</td>
+						</tr>
+					
+						<tr>
 							<td class="attributes">&nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
@@ -283,9 +293,9 @@ ul.inheritsList
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#boardWidthBoxes">boardWidthBoxes</a></b>
+								<b><a href="../symbols/_global_.html#BOARD_WIDTH_BOXES">BOARD_WIDTH_BOXES</a></b>
 								</div>
-								<div class="description">The width of the board, as a multiple of tileWidth</div>
+								<div class="description">The width of the board, as a multiple of TILE_WIDTH</div>
 							</td>
 						</tr>
 					
@@ -293,7 +303,7 @@ ul.inheritsList
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#boxHeight">boxHeight</a></b>
+								<b><a href="../symbols/_global_.html#BOX_HEIGHT">BOX_HEIGHT</a></b>
 								</div>
 								<div class="description">The height of a game row, as distinct from a tile height.</div>
 							</td>
@@ -303,9 +313,19 @@ ul.inheritsList
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#boxWidth">boxWidth</a></b>
+								<b><a href="../symbols/_global_.html#BOX_WIDTH">BOX_WIDTH</a></b>
 								</div>
-								<div class="description">The width of a game row - equals tileWidth.</div>
+								<div class="description">The width of a game row - equals TILE_WIDTH.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;constant&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								<b><a href="../symbols/_global_.html#CHARACTER_URLS">CHARACTER_URLS</a></b>
+								</div>
+								<div class="description">An array of relative URLs used to change the current character.</div>
 							</td>
 						</tr>
 					
@@ -316,17 +336,6 @@ ul.inheritsList
 								<b><a href="../symbols/_global_.html#characterNumber">characterNumber</a></b>
 								</div>
 								<div class="description">The index of the current character's bitmap.</div>
-							</td>
-						</tr>
-					
-						<tr>
-							<td class="attributes">&lt;constant&gt; &nbsp;</td>
-							<td class="nameDescription">
-								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#characterUrls">characterUrls</a></b>
-								</div>
-								<div class="description">An array of relative URLs used to change the current character
-during gameplay.</div>
 							</td>
 						</tr>
 					
@@ -345,7 +354,7 @@ during gameplay.</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemyBoundBottomOffset">enemyBoundBottomOffset</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_BOUND_BOTTOM_OFFSET">ENEMY_BOUND_BOTTOM_OFFSET</a></b>
 								</div>
 								<div class="description">The number of pixels between the bottom of the tile and the bottom of
 the enemy's bounding rectangle</div>
@@ -356,7 +365,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemyBoundHeight">enemyBoundHeight</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_BOUND_HEIGHT">ENEMY_BOUND_HEIGHT</a></b>
 								</div>
 								<div class="description">The height of the enemy's bounding rectangle in case its needed for something.</div>
 							</td>
@@ -366,7 +375,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemyBoundLeftOffset">enemyBoundLeftOffset</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_BOUND_LEFT_OFFSET">ENEMY_BOUND_LEFT_OFFSET</a></b>
 								</div>
 								<div class="description">The number of pixels between the left side of the tile and the left side of
 the enemy's bounding rectangle</div>
@@ -377,7 +386,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemyBoundRightOffset">enemyBoundRightOffset</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_BOUND_RIGHT_OFFSET">ENEMY_BOUND_RIGHT_OFFSET</a></b>
 								</div>
 								<div class="description">The number of pixels between the right side of the tile and the right side of
 the enemy's bounding rectangle</div>
@@ -388,7 +397,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemyBoundTopOffset">enemyBoundTopOffset</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_BOUND_TOP_OFFSET">ENEMY_BOUND_TOP_OFFSET</a></b>
 								</div>
 								<div class="description">The number of pixels between the top of the tile and the top of
 the enemy's bounding rectangle</div>
@@ -399,7 +408,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemyBoundWidth">enemyBoundWidth</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_BOUND_WIDTH">ENEMY_BOUND_WIDTH</a></b>
 								</div>
 								<div class="description">The width of the enemy's bounding rectangle in case its needed for something.</div>
 							</td>
@@ -409,7 +418,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemyDrawYOffset">enemyDrawYOffset</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_DRAW_Y_OFFSET">ENEMY_DRAW_Y_OFFSET</a></b>
 								</div>
 								<div class="description">Used to correctly position the enemy tile to improve appearance.</div>
 							</td>
@@ -419,7 +428,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemyHeight">enemyHeight</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_HEIGHT">ENEMY_HEIGHT</a></b>
 								</div>
 								<div class="description">The height of an enemy tile.</div>
 							</td>
@@ -429,7 +438,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemySpeedHigh">enemySpeedHigh</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_SPEED_HIGH">ENEMY_SPEED_HIGH</a></b>
 								</div>
 								<div class="description">The high end of the random range within which enemies move</div>
 							</td>
@@ -439,7 +448,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemySpeedLow">enemySpeedLow</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_SPEED_LOW">ENEMY_SPEED_LOW</a></b>
 								</div>
 								<div class="description">The low end of the random range within which enemies move</div>
 							</td>
@@ -449,7 +458,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#enemyWidth">enemyWidth</a></b>
+								<b><a href="../symbols/_global_.html#ENEMY_WIDTH">ENEMY_WIDTH</a></b>
 								</div>
 								<div class="description">The width of an enemy tile.</div>
 							</td>
@@ -489,7 +498,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#maxCharNum">maxCharNum</a></b>
+								<b><a href="../symbols/_global_.html#MAX_CHAR_NUM">MAX_CHAR_NUM</a></b>
 								</div>
 								<div class="description">The highest poasible index in the array of character URLs.</div>
 							</td>
@@ -519,7 +528,7 @@ the enemy's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#playerBoundBottomOffset">playerBoundBottomOffset</a></b>
+								<b><a href="../symbols/_global_.html#PLAYER_BOUND_BOTTOM_OFFSET">PLAYER_BOUND_BOTTOM_OFFSET</a></b>
 								</div>
 								<div class="description">The number of pixels between the bottom of the tile and the bottom of
 the player's bounding rectangle</div>
@@ -530,7 +539,7 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#playerBoundHeight">playerBoundHeight</a></b>
+								<b><a href="../symbols/_global_.html#PLAYER_BOUND_HEIGHT">PLAYER_BOUND_HEIGHT</a></b>
 								</div>
 								<div class="description">The width of the player's bounding rectangle in case its needed for something.</div>
 							</td>
@@ -540,7 +549,7 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#playerBoundLeftOffset">playerBoundLeftOffset</a></b>
+								<b><a href="../symbols/_global_.html#PLAYER_BOUND_LEFT_OFFSET">PLAYER_BOUND_LEFT_OFFSET</a></b>
 								</div>
 								<div class="description">The number of pixels between the left side of the tile and the left side of
 the player's bounding rectangle</div>
@@ -551,7 +560,7 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#playerBoundRightOffset">playerBoundRightOffset</a></b>
+								<b><a href="../symbols/_global_.html#PLAYER_BOUND_RIGHT_OFFSET">PLAYER_BOUND_RIGHT_OFFSET</a></b>
 								</div>
 								<div class="description">The number of pixels between the right side of the tile and the right side of
 the player's bounding rectangle</div>
@@ -562,7 +571,7 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#playerBoundTopOffset">playerBoundTopOffset</a></b>
+								<b><a href="../symbols/_global_.html#PLAYER_BOUND_TOP_OFFSET">PLAYER_BOUND_TOP_OFFSET</a></b>
 								</div>
 								<div class="description">The number of pixels between the top of the tile and the top of
 the player's bounding rectangle</div>
@@ -573,7 +582,7 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#playerBoundWidth">playerBoundWidth</a></b>
+								<b><a href="../symbols/_global_.html#PLAYER_BOUND_WIDTH">PLAYER_BOUND_WIDTH</a></b>
 								</div>
 								<div class="description">The width of the player's bounding rectangle in case its needed for something.</div>
 							</td>
@@ -583,7 +592,7 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#playerHeight">playerHeight</a></b>
+								<b><a href="../symbols/_global_.html#PLAYER_HEIGHT">PLAYER_HEIGHT</a></b>
 								</div>
 								<div class="description">The width of an player tile.</div>
 							</td>
@@ -593,7 +602,7 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#playerWidth">playerWidth</a></b>
+								<b><a href="../symbols/_global_.html#PLAYER_WIDTH">PLAYER_WIDTH</a></b>
 								</div>
 								<div class="description">The width of an player tile.</div>
 							</td>
@@ -603,9 +612,19 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#prizeDrawYOffset">prizeDrawYOffset</a></b>
+								<b><a href="../symbols/_global_.html#PRIZE_DRAW_Y_OFFSET">PRIZE_DRAW_Y_OFFSET</a></b>
 								</div>
 								<div class="description">Used to correctly position the enemy tile to improve appearance.</div>
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="attributes">&lt;constant&gt; &nbsp;</td>
+							<td class="nameDescription">
+								<div class="fixedFont">
+								<b><a href="../symbols/_global_.html#PRIZE_URLS">PRIZE_URLS</a></b>
+								</div>
+								<div class="description">An array of relative URLs used to set the prize bitmaps.</div>
 							</td>
 						</tr>
 					
@@ -643,7 +662,7 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#tileHeight">tileHeight</a></b>
+								<b><a href="../symbols/_global_.html#TILE_HEIGHT">TILE_HEIGHT</a></b>
 								</div>
 								<div class="description">The high of a full tile on the game canvas.</div>
 							</td>
@@ -653,7 +672,7 @@ the player's bounding rectangle</div>
 							<td class="attributes">&lt;constant&gt; &nbsp;</td>
 							<td class="nameDescription">
 								<div class="fixedFont">
-								<b><a href="../symbols/_global_.html#tileWidth">tileWidth</a></b>
+								<b><a href="../symbols/_global_.html#TILE_WIDTH">TILE_WIDTH</a></b>
 								</div>
 								<div class="description">The high of a full tile on the game canvas.</div>
 							</td>
@@ -861,6 +880,31 @@ given parameter, and calls tickTimer every ~timerInterval seconds.</div>
 
 					<hr />
 				
+					<a name="AUDIO_URLS"> </a>
+					<div class="fixedFont">&lt;constant&gt; 
+					
+					
+					<b>AUDIO_URLS</b>
+					
+					</div>
+					<div class="description">
+						An array of relative URLs used to get sounds for gameplay.
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
 					<a name="audioon"> </a>
 					<div class="fixedFont">
 					
@@ -886,15 +930,15 @@ given parameter, and calls tickTimer every ~timerInterval seconds.</div>
 
 					<hr />
 				
-					<a name="boardWidthBoxes"> </a>
+					<a name="BOARD_WIDTH_BOXES"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>boardWidthBoxes</b>
+					<b>BOARD_WIDTH_BOXES</b>
 					
 					</div>
 					<div class="description">
-						The width of the board, as a multiple of tileWidth
+						The width of the board, as a multiple of TILE_WIDTH
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
@@ -910,7 +954,7 @@ given parameter, and calls tickTimer every ~timerInterval seconds.</div>
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-							<dd><a href="../symbols/_global_.html#tileWidth">tileWidth</a></dd>
+							<dd><a href="../symbols/_global_.html#TILE_WIDTH">TILE_WIDTH</a></dd>
 							
 							</dl>
 						
@@ -918,11 +962,11 @@ given parameter, and calls tickTimer every ~timerInterval seconds.</div>
 
 					<hr />
 				
-					<a name="boxHeight"> </a>
+					<a name="BOX_HEIGHT"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>boxHeight</b>
+					<b>BOX_HEIGHT</b>
 					
 					</div>
 					<div class="description">
@@ -943,15 +987,15 @@ given parameter, and calls tickTimer every ~timerInterval seconds.</div>
 
 					<hr />
 				
-					<a name="boxWidth"> </a>
+					<a name="BOX_WIDTH"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>boxWidth</b>
+					<b>BOX_WIDTH</b>
 					
 					</div>
 					<div class="description">
-						The width of a game row - equals tileWidth.
+						The width of a game row - equals TILE_WIDTH.
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
@@ -967,7 +1011,7 @@ given parameter, and calls tickTimer every ~timerInterval seconds.</div>
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-							<dd><a href="../symbols/_global_.html#tileWidth">tileWidth</a></dd>
+							<dd><a href="../symbols/_global_.html#TILE_WIDTH">TILE_WIDTH</a></dd>
 							
 							</dl>
 						
@@ -975,15 +1019,16 @@ given parameter, and calls tickTimer every ~timerInterval seconds.</div>
 
 					<hr />
 				
-					<a name="characterNumber"> </a>
+					<a name="CHARACTER_URLS"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>characterNumber</b>
+					<b>CHARACTER_URLS</b>
 					
 					</div>
 					<div class="description">
-						The index of the current character's bitmap.
+						An array of relative URLs used to change the current character.
+during gameplay.
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
@@ -1000,16 +1045,15 @@ given parameter, and calls tickTimer every ~timerInterval seconds.</div>
 
 					<hr />
 				
-					<a name="characterUrls"> </a>
+					<a name="characterNumber"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>characterUrls</b>
+					<b>characterNumber</b>
 					
 					</div>
 					<div class="description">
-						An array of relative URLs used to change the current character
-during gameplay.
+						The index of the current character's bitmap.
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
@@ -1052,11 +1096,11 @@ during gameplay.
 
 					<hr />
 				
-					<a name="enemyBoundBottomOffset"> </a>
+					<a name="ENEMY_BOUND_BOTTOM_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemyBoundBottomOffset</b>
+					<b>ENEMY_BOUND_BOTTOM_OFFSET</b>
 					
 					</div>
 					<div class="description">
@@ -1087,11 +1131,11 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemyBoundHeight"> </a>
+					<a name="ENEMY_BOUND_HEIGHT"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemyBoundHeight</b>
+					<b>ENEMY_BOUND_HEIGHT</b>
 					
 					</div>
 					<div class="description">
@@ -1121,11 +1165,11 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemyBoundLeftOffset"> </a>
+					<a name="ENEMY_BOUND_LEFT_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemyBoundLeftOffset</b>
+					<b>ENEMY_BOUND_LEFT_OFFSET</b>
 					
 					</div>
 					<div class="description">
@@ -1156,11 +1200,11 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemyBoundRightOffset"> </a>
+					<a name="ENEMY_BOUND_RIGHT_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemyBoundRightOffset</b>
+					<b>ENEMY_BOUND_RIGHT_OFFSET</b>
 					
 					</div>
 					<div class="description">
@@ -1191,11 +1235,11 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemyBoundTopOffset"> </a>
+					<a name="ENEMY_BOUND_TOP_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemyBoundTopOffset</b>
+					<b>ENEMY_BOUND_TOP_OFFSET</b>
 					
 					</div>
 					<div class="description">
@@ -1226,11 +1270,11 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemyBoundWidth"> </a>
+					<a name="ENEMY_BOUND_WIDTH"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemyBoundWidth</b>
+					<b>ENEMY_BOUND_WIDTH</b>
 					
 					</div>
 					<div class="description">
@@ -1260,11 +1304,11 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemyDrawYOffset"> </a>
+					<a name="ENEMY_DRAW_Y_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemyDrawYOffset</b>
+					<b>ENEMY_DRAW_Y_OFFSET</b>
 					
 					</div>
 					<div class="description">
@@ -1285,15 +1329,15 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemyHeight"> </a>
+					<a name="ENEMY_HEIGHT"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemyHeight</b>
+					<b>ENEMY_HEIGHT</b>
 					
 					</div>
 					<div class="description">
-						The height of an enemy tile. For this game, same as tileHeight
+						The height of an enemy tile. For this game, same as TILE_HEIGHT
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
@@ -1309,7 +1353,7 @@ the enemy's bounding rectangle
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-							<dd><a href="../symbols/_global_.html#tileHeight">tileHeight</a></dd>
+							<dd><a href="../symbols/_global_.html#TILE_HEIGHT">TILE_HEIGHT</a></dd>
 							
 							</dl>
 						
@@ -1317,11 +1361,11 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemySpeedHigh"> </a>
+					<a name="ENEMY_SPEED_HIGH"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemySpeedHigh</b>
+					<b>ENEMY_SPEED_HIGH</b>
 					
 					</div>
 					<div class="description">
@@ -1349,11 +1393,11 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemySpeedLow"> </a>
+					<a name="ENEMY_SPEED_LOW"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemySpeedLow</b>
+					<b>ENEMY_SPEED_LOW</b>
 					
 					</div>
 					<div class="description">
@@ -1381,15 +1425,15 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="enemyWidth"> </a>
+					<a name="ENEMY_WIDTH"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>enemyWidth</b>
+					<b>ENEMY_WIDTH</b>
 					
 					</div>
 					<div class="description">
-						The width of an enemy tile. For this game, same as tileWidth
+						The width of an enemy tile. For this game, same as TILE_WIDTH
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
@@ -1405,7 +1449,7 @@ the enemy's bounding rectangle
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-							<dd><a href="../symbols/_global_.html#tileWidth">tileWidth</a></dd>
+							<dd><a href="../symbols/_global_.html#TILE_WIDTH">TILE_WIDTH</a></dd>
 							
 							</dl>
 						
@@ -1490,11 +1534,11 @@ the enemy's bounding rectangle
 
 					<hr />
 				
-					<a name="maxCharNum"> </a>
+					<a name="MAX_CHAR_NUM"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>maxCharNum</b>
+					<b>MAX_CHAR_NUM</b>
 					
 					</div>
 					<div class="description">
@@ -1586,11 +1630,11 @@ Engine will malfunction.</b>
 
 					<hr />
 				
-					<a name="playerBoundBottomOffset"> </a>
+					<a name="PLAYER_BOUND_BOTTOM_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>playerBoundBottomOffset</b>
+					<b>PLAYER_BOUND_BOTTOM_OFFSET</b>
 					
 					</div>
 					<div class="description">
@@ -1621,11 +1665,11 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="playerBoundHeight"> </a>
+					<a name="PLAYER_BOUND_HEIGHT"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>playerBoundHeight</b>
+					<b>PLAYER_BOUND_HEIGHT</b>
 					
 					</div>
 					<div class="description">
@@ -1655,11 +1699,11 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="playerBoundLeftOffset"> </a>
+					<a name="PLAYER_BOUND_LEFT_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>playerBoundLeftOffset</b>
+					<b>PLAYER_BOUND_LEFT_OFFSET</b>
 					
 					</div>
 					<div class="description">
@@ -1690,11 +1734,11 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="playerBoundRightOffset"> </a>
+					<a name="PLAYER_BOUND_RIGHT_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>playerBoundRightOffset</b>
+					<b>PLAYER_BOUND_RIGHT_OFFSET</b>
 					
 					</div>
 					<div class="description">
@@ -1725,11 +1769,11 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="playerBoundTopOffset"> </a>
+					<a name="PLAYER_BOUND_TOP_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>playerBoundTopOffset</b>
+					<b>PLAYER_BOUND_TOP_OFFSET</b>
 					
 					</div>
 					<div class="description">
@@ -1760,11 +1804,11 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="playerBoundWidth"> </a>
+					<a name="PLAYER_BOUND_WIDTH"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>playerBoundWidth</b>
+					<b>PLAYER_BOUND_WIDTH</b>
 					
 					</div>
 					<div class="description">
@@ -1794,15 +1838,15 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="playerHeight"> </a>
+					<a name="PLAYER_HEIGHT"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>playerHeight</b>
+					<b>PLAYER_HEIGHT</b>
 					
 					</div>
 					<div class="description">
-						The width of an player tile. For this game, same as tileWidth
+						The width of an player tile. For this game, same as TILE_WIDTH
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
@@ -1818,7 +1862,7 @@ the player's bounding rectangle
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-							<dd><a href="../symbols/_global_.html#tileHeight">tileHeight</a></dd>
+							<dd><a href="../symbols/_global_.html#TILE_HEIGHT">TILE_HEIGHT</a></dd>
 							
 							</dl>
 						
@@ -1826,15 +1870,15 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="playerWidth"> </a>
+					<a name="PLAYER_WIDTH"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>playerWidth</b>
+					<b>PLAYER_WIDTH</b>
 					
 					</div>
 					<div class="description">
-						The width of an player tile. For this game, same as tileWidth
+						The width of an player tile. For this game, same as TILE_WIDTH
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
@@ -1850,7 +1894,7 @@ the player's bounding rectangle
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-							<dd><a href="../symbols/_global_.html#tileWidth">tileWidth</a></dd>
+							<dd><a href="../symbols/_global_.html#TILE_WIDTH">TILE_WIDTH</a></dd>
 							
 							</dl>
 						
@@ -1858,15 +1902,40 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="prizeDrawYOffset"> </a>
+					<a name="PRIZE_DRAW_Y_OFFSET"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>prizeDrawYOffset</b>
+					<b>PRIZE_DRAW_Y_OFFSET</b>
 					
 					</div>
 					<div class="description">
 						Used to correctly position the enemy tile to improve appearance.
+						
+							<br />
+							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
+						
+						
+					</div>
+					
+					
+
+						
+						
+						
+						
+
+					<hr />
+				
+					<a name="PRIZE_URLS"> </a>
+					<div class="fixedFont">&lt;constant&gt; 
+					
+					
+					<b>PRIZE_URLS</b>
+					
+					</div>
+					<div class="description">
+						An array of relative URLs used to set the prize bitmaps.
 						
 							<br />
 							<i>Defined in: </i> <a href="../symbols/src/app.js.html">app.js</a>.
@@ -1967,11 +2036,11 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="tileHeight"> </a>
+					<a name="TILE_HEIGHT"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>tileHeight</b>
+					<b>TILE_HEIGHT</b>
 					
 					</div>
 					<div class="description">
@@ -1992,11 +2061,11 @@ the player's bounding rectangle
 
 					<hr />
 				
-					<a name="tileWidth"> </a>
+					<a name="TILE_WIDTH"> </a>
 					<div class="fixedFont">&lt;constant&gt; 
 					
 					
-					<b>tileWidth</b>
+					<b>TILE_WIDTH</b>
 					
 					</div>
 					<div class="description">
@@ -2521,7 +2590,7 @@ audio preference anc character, and restart the game.
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Wed Dec 31 2014 15:46:09 GMT-0500 (EST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Wed Dec 31 2014 15:59:42 GMT-0500 (EST)
 		</div>
 	</body>
 </html>
