@@ -22,32 +22,35 @@ h1 {
 }
 
 h2 {
-    color: #bcbbbb;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 18px;
 }
 
 h3 {
-    color: #747704;
-    font-size: 26px;
-    margin-left: 5px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    font-size: 30px;
+    color: #bcbbbb;
 }
 
 h4 {
-    font-weight: 400;
-    margin-bottom: 0px;
+    color: #747704;
+    font-size: 26px;
+    margin-left: 5px;
+    margin-bottom: 10px; 
 }
 
-h1, h4 {
+h1, h2 {
     color: #747704;
     margin-right: 0px;
     padding-right: 0px;
 }
 
-h3, h4 {
+h4, h2 {
     font-weight: 400;
 }
 
-h1, h3, h4 {
+h1, h2, h4 {
     text-transform: uppercase;
 }
 
@@ -82,11 +85,6 @@ img {
     margin: 0 auto;
 }
 
-.app-image {
-    margin-top: 25px;
-    margin-bottom: 0px;
-}
-
 .seperator {
     border: 1px solid #bcbbbb !important;
     height: 1px;
@@ -95,10 +93,39 @@ img {
     margin-right: 0px;
 }
 
+.app-image {
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.project-image {
+    margin-bottom: 0px;
+}
+
+.banner-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
 .no-bottom-margin {
     margin-bottom: 0px;
 }
 
+.no-left-padding {
+    padding-left: 0px;
+}
+
+.no-right-padding {
+    padding-right: 0px;
+}
+
+.no-side-margins {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 .top-margin-spacer {
-    margin-top: 10px;
+    margin-top: 30px;
 }
